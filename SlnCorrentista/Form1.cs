@@ -16,7 +16,7 @@ namespace SlnCorrentista
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-
+           
             try
             {
                 if (correntista1 is null)
@@ -26,11 +26,13 @@ namespace SlnCorrentista
                         Convert.ToDateTime(dtpDataNascimento.Text),
                         Convert.ToDouble(txtRendaMensal.Text));
 
-                    if (!correntista1.VerificarSeCorrentistaMaior())
-                    {
-                        throw new Exception("O correntista precisa ser maior de idade!");
-                    }
+                    //*** Verificação feita dentro da classe ***
+                    //if (!correntista1.VerificarSeCorrentistaMaior())
+                    //{
+                    //    throw new Exception("O correntista precisa ser maior de idade!");
+                    //}
                     MessageBox.Show("Correntista cadastrado com sucesso!!!");
+                    txtId.Text = Correntista.ContadorCorrentista.ToString();
                     btnVerCorrentista1.Visible = true;
                 }
                 else if (correntista2 is null)
@@ -40,11 +42,13 @@ namespace SlnCorrentista
                         Convert.ToDateTime(dtpDataNascimento.Text),
                         Convert.ToDouble(txtRendaMensal.Text));
 
-                    if (!correntista2.VerificarSeCorrentistaMaior())
-                    {
-                        throw new Exception("O correntista precisa ser maior de idade!");
-                    }
+                    //*** Verificação feita dentro da classe ***
+                    //if (!correntista2.VerificarSeCorrentistaMaior())
+                    //{
+                    //   throw new Exception("O correntista precisa ser maior de idade!");
+                    //}
                     MessageBox.Show("Correntista cadastrado com sucesso!!!");
+                    txtId.Text = Correntista.ContadorCorrentista.ToString();
                     btnVerCorrentista2.Visible = true;
                 }
                 else
@@ -53,16 +57,15 @@ namespace SlnCorrentista
                 }
 
 
-                txtCpf.Clear();
-                txtId.Clear();
+                txtCpf.Clear();              
                 txtNome.Clear();
                 txtRendaMensal.Clear();
                 dtpDataNascimento.Text = DateTime.Now.ToString();
 
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
-                MessageBox.Show("Preencha os campos no formato correto");
+                MessageBox.Show("Preencha todo o formulário corretamente");
             }
             catch (Exception ex)
             {

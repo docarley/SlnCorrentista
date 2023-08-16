@@ -36,11 +36,11 @@
             label4 = new Label();
             label5 = new Label();
             txtNome = new TextBox();
-            txtCpf = new TextBox();
             txtRendaMensal = new TextBox();
             dtpDataNascimento = new DateTimePicker();
             btnVerCorrentista1 = new Button();
             btnVerCorrentista2 = new Button();
+            txtCpf = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -76,11 +76,13 @@
             // 
             // txtId
             // 
+            txtId.Enabled = false;
             txtId.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             txtId.Location = new Point(296, 28);
             txtId.Name = "txtId";
             txtId.Size = new Size(100, 43);
             txtId.TabIndex = 3;
+            txtId.Text = "1";
             // 
             // label3
             // 
@@ -120,19 +122,12 @@
             txtNome.Size = new Size(498, 43);
             txtNome.TabIndex = 7;
             // 
-            // txtCpf
-            // 
-            txtCpf.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCpf.Location = new Point(296, 148);
-            txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(498, 43);
-            txtCpf.TabIndex = 8;
-            // 
             // txtRendaMensal
             // 
             txtRendaMensal.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             txtRendaMensal.Location = new Point(296, 268);
             txtRendaMensal.Name = "txtRendaMensal";
+            txtRendaMensal.PlaceholderText = "apenas números...";
             txtRendaMensal.Size = new Size(498, 43);
             txtRendaMensal.TabIndex = 9;
             // 
@@ -168,16 +163,26 @@
             btnVerCorrentista2.Visible = false;
             btnVerCorrentista2.Click += btnVerCorrentista2_Click;
             // 
+            // txtCpf
+            // 
+            txtCpf.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCpf.Location = new Point(296, 148);
+            txtCpf.MaxLength = 11;
+            txtCpf.Name = "txtCpf";
+            txtCpf.PlaceholderText = "apenas números...";
+            txtCpf.Size = new Size(498, 43);
+            txtCpf.TabIndex = 13;
+            // 
             // frmCorrentista
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(844, 421);
+            Controls.Add(txtCpf);
             Controls.Add(btnVerCorrentista2);
             Controls.Add(btnVerCorrentista1);
             Controls.Add(dtpDataNascimento);
             Controls.Add(txtRendaMensal);
-            Controls.Add(txtCpf);
             Controls.Add(txtNome);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -203,10 +208,10 @@
         private Label label4;
         private Label label5;
         private TextBox txtNome;
-        private TextBox txtCpf;
         private TextBox txtRendaMensal;
         private DateTimePicker dtpDataNascimento;
         private Button btnVerCorrentista1;
         private Button btnVerCorrentista2;
+        private TextBox txtCpf;
     }
 }
